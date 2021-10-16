@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profil.css">
+</head>
+
+<body>
+    <section>
+        <div class="container sign" id="sign">
+            <h2>Profilingizga kirish</h2>
+            <p>
+                Login va parolni kiriting
+            </p>
+            <label> <b>Login</b></label>
+            <input id="input" type="text">
+            <label><b>Parol</b></label>
+            <div id="password">
+                <input id="input" type="password" class="pass">
+                <div onclick="password()" id="show">Show</div>
+            </div>
+
+            <label for="check">
+                 <input type="checkbox" id="check"> Parol saqlansinmi? </label>
+
+            <div id="btn">
+                <button class="btn1 btn" id="enter">Kirish</button>
+                <button class="btn2 btn" id="registr" onclick="sign()">Registratsiya</button>
+            </div>
+
+            <p>
+                <b> Ijtimoiy tarmoq orqali kirish</b>
+            </p>
+            <div class="onli">
+                <div class="online"> <img src="027-linkedin.png" alt="" class="im">Linkedln</div>
+                <div class="online"> <img src="008-twitter.png" alt="" class="im">twitter</div>
+                <div class="online"> <img src="036-facebook.png" alt="" class="im">facebook</div>
+            </div>
+            <p>Don't have account? <a href="#">Creative Account</a></p>
+        </div>
+
+        <div class="container imgw" id="imgw">
+
+
+        </div>
+
+        <div class="container login" id="login">
+            <form action="" method="get">
+                <h2>Ro'yxatdan o'ting</h2>
+                <p>F.I.O</p>
+                <input id="input" type="text" placeholder=" Shahzodjon Beshimov  Bobir o'g'li">
+                <p>
+                    Telefon raqami
+                </p>
+                <!-- <input type="tel" class="tel" placeholder="+998XX-XXX-XX-XX" onkeyup="telNumber()"> -->
+
+                <input id="phoneNumber" class="input" maxlength="18" placeholder="+998xx-xxx-xx-xx">
+
+                <p>
+                    Email manzilingiz
+                </p>
+                <input id="input" type="email" placeholder="Test@gmail.com">
+
+                <label> Login </label>
+                <input id="input" type="text">
+                <label>Parol</label>
+                <div id="password">
+                    <input id="input" class="passs" type="password">
+                    <div onclick="passwordd()" id="show">Show</div>
+                </div>
+                <label for="check1">
+                <input type="checkbox" id="check1"> Remember password </label>
+                <div class="btn" class="kirish" style="margin-top: 10px;" onclick="signUp()">
+                    Kirish
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <script>
+        function phoneFormat(input) {
+
+            input = input.replace(/\D/g, '');
+
+
+            input = input.substring(0, 15);
+
+            var size = input.length;
+            if (size == 0) {
+                input = input;
+            } else if (size < 4) {
+                input = '(' + input;
+            } else if (size < 6) {
+                input = '(' + input.substring(0, 2) + ') ' + input.substring(2, 5);
+            } else if (size < 8) {
+                input = '(' + input.substring(0, 2) + ') ' + input.substring(2, 5) + ' - ' + input.substring(5, 9);
+            } else {
+                input = '(' + input.substring(0, 2) + ') ' + input.substring(2, 5) + ' - ' + input.substring(5, 7) + ' - ' + input.substring(7, 9);
+            }
+            return input;
+        }
+
+        document.getElementById('phoneNumber').addEventListener('keyup', function(evt) {
+            var phoneNumber = document.getElementById('phoneNumber');
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            phoneNumber.value = phoneFormat(phoneNumber.value);
+        });
+
+
+
+
+
+
+
+
+        function password() {
+            let pass = document.querySelector(".pass");
+
+
+            if (pass.type === "password") {
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+
+            }
+
+        }
+
+        function passwordd() {
+            let pass = document.querySelector(".passs");
+
+
+            if (pass.type === "password") {
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+
+            }
+
+        }
+
+        function sign() {
+            let img = document.querySelector("#imgw");
+            let sign = document.querySelector("#sign");
+            let login = document.querySelector("#login");
+
+            img.style.left = "0";
+            login.style.right = "0";
+
+        }
+
+        function signUp() {
+            let img = document.querySelector("#imgw");
+            let sign = document.querySelector("#sign");
+            let login = document.querySelector("#login");
+
+            img.style.left = "50%";
+            login.style.right = "-100%";
+
+        }
+
+        function telNumber() {
+            // let telNum = document.querySelector(".tel");
+            // telNum.value = "+998";
+
+            // let tell = telNum.value;
+            // let telN = tell.length;
+            // // console.log(typeof tell[telN - 1])
+            // telNum.value += parseInt(tell[telN - 1])
+
+            const inp = (e) => {
+                const value = e.target.value;
+
+                const valValue = value.replace(/[^0-9]/g, '');
+                console.log(valValue)
+                return valValue;
+
+            }
+
+
+            // document.getElementById('phoneNumber').addEventListener('keyup', function(evt) {
+            //     var phoneNumber = document.getElementById('phoneNumber');
+            //     var charCode = (evt.which) ? evt.which : evt.keyCode;
+            //     phoneNumber.value = phoneFormat(phoneNumber.value);
+            // });
+        }
+    </script>
+</body>
+
+</html>

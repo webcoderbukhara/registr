@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    transition: .5s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, red, orange);
+}
+
+section {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: small;
+    overflow: hidden;
+    transition: all .5;
+}
+
+.container {
+    position: absolute;
+    padding: 20px;
+    width: calc(50% - 10px);
+    min-width: 360px;
+    height: calc(100% - 20px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: all 1s;
+}
+
+#password {
+    position: relative;
+    width: 100%;
+}
+
+#show {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#input,
+.input {
+    width: 100%;
+    padding: 7px;
+    outline: none;
+}
+
+.online {
+    position: relative;
+}
+
+.im {
+    position: absolute;
+    width: 15px;
+    left: 4px;
+}
+
+#btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: large;
+    background-color: rgb(81, 0, 161);
+    color: white;
+    border: 1px solid rgb(26, 0, 51);
+    border-radius: 5px;
+}
+
+.onli {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.online {
+    width: 100px;
+    padding: 5px;
+    background-color: rgba(81, 0, 161, .2);
+    text-align: center;
+    border-radius: 7px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: small;
+}
+
+.imgw {
+    right: 0;
+    background: url(rasm2.jpg);
+    background-size: cover;
+}
+
+.login {
+    right: -100%;
+}
+
+
+/* .imgw:hover {
+    left: 0;
+} */
+
+
+/* 
+.imgw:hover .login {
+    right: 0;
+} */
